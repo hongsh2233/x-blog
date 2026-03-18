@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* highlight.js github-dark theme */
+@import "highlight.js/styles/github-dark.css";
+
+@layer base {
+  html {
+    @apply antialiased;
+  }
+
+  body {
+    @apply bg-gray-50 text-gray-900;
+  }
+}
+
+@layer components {
+  .tag-badge {
+    @apply inline-block px-2 py-0.5 text-xs font-medium rounded-full
+           bg-blue-50 text-blue-700 border border-blue-200;
+  }
+}
