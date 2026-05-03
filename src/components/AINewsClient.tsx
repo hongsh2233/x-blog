@@ -26,7 +26,7 @@ export default function AINewsClient() {
         } else {
           setError('뉴스를 불러올 수 없습니다');
         }
-      } catch (err) {
+      } catch {
         setError('요청 중 오류가 발생했습니다');
       } finally {
         setLoading(false);
