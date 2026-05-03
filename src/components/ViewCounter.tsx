@@ -14,9 +14,9 @@ export default function ViewCounter({ slug }: { slug: string }) {
   }, [slug]);
 
   return (
-    <span className="flex items-center gap-1.5 text-sm text-gray-500">
+    <span className="flex items-center gap-2 text-sm font-medium text-gray-600">
       <svg
-        className="w-4 h-4"
+        className="w-5 h-5 text-accent-600"
         fill="none"
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -35,7 +35,7 @@ export default function ViewCounter({ slug }: { slug: string }) {
           d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
         />
       </svg>
-      {views === null ? "—" : `${views.toLocaleString()} views`}
+      <span>{views === null ? "—" : `${views.toLocaleString()} views`}</span>
     </span>
   );
 }

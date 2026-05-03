@@ -14,19 +14,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body className="min-h-screen flex flex-col">
-        <header className="bg-white border-b border-gray-200 sticky top-0 z-10">
-          <div className="max-w-3xl mx-auto px-6 h-14 flex items-center justify-between">
+      <body className="min-h-screen flex flex-col bg-white">
+        <header className="bg-white border-b border-gray-100 sticky top-0 z-10 backdrop-blur-sm bg-white/95">
+          <div className="max-w-4xl mx-auto px-8 h-16 flex items-center justify-between">
             <Link
               href="/"
-              className="text-lg font-bold text-gray-900 hover:text-blue-600 transition-colors"
+              className="text-xl font-bold text-gray-900 hover:text-accent-600 transition-colors duration-200 tracking-tight"
             >
               Tech Blog
             </Link>
-            <nav>
+            <nav className="flex items-center gap-8">
               <Link
                 href="/about"
-                className="text-sm text-gray-600 hover:text-blue-600 transition-colors"
+                className="text-sm font-medium text-gray-600 hover:text-accent-600 transition-colors duration-200"
               >
                 About
               </Link>
@@ -34,12 +34,13 @@ export default function RootLayout({
           </div>
         </header>
 
-        <main className="flex-1 max-w-3xl mx-auto w-full px-6 py-12">
+        <main className="flex-1 max-w-4xl mx-auto w-full px-8 py-16">
           {children}
         </main>
 
-        <footer className="border-t border-gray-200 py-8 text-center text-sm text-gray-400">
-          © {new Date().getFullYear()} Tech Blog. Built with Next.js &amp; Tailwind CSS.
+        <footer className="border-t border-gray-100 py-12 text-center text-sm text-gray-500 bg-gray-50/50">
+          <p className="mb-2">© {new Date().getFullYear()} Tech Blog</p>
+          <p className="text-xs text-gray-400">Built with <span className="text-accent-600 font-medium">Next.js</span> &amp; <span className="text-accent-600 font-medium">Tailwind CSS</span></p>
         </footer>
       </body>
     </html>

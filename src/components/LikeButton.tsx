@@ -40,18 +40,18 @@ export default function LikeButton({ slug }: { slug: string }) {
       onClick={handleLike}
       disabled={liked || loading}
       className={`
-        flex items-center gap-2 px-6 py-3 rounded-full border-2 transition-all duration-200
+        flex items-center gap-3 px-8 py-4 rounded-full font-semibold transition-all duration-300 transform
         ${
           liked
-            ? "border-red-400 bg-red-50 text-red-500 cursor-default"
-            : "border-gray-300 bg-white text-gray-500 hover:border-red-400 hover:text-red-500 hover:bg-red-50"
+            ? "bg-accent-100 text-accent-700 border-2 border-accent-300 cursor-default shadow-md"
+            : "bg-white text-gray-700 border-2 border-gray-200 hover:border-accent-400 hover:text-accent-600 hover:bg-accent-50 active:scale-95"
         }
-        disabled:opacity-60
+        disabled:opacity-60 disabled:scale-100
       `}
       aria-label="좋아요"
     >
       <svg
-        className={`w-5 h-5 transition-transform ${liked ? "scale-110" : ""}`}
+        className={`w-6 h-6 transition-all duration-300 ${liked ? "scale-110" : ""}`}
         fill={liked ? "currentColor" : "none"}
         stroke="currentColor"
         viewBox="0 0 24 24"
@@ -64,7 +64,7 @@ export default function LikeButton({ slug }: { slug: string }) {
           d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
         />
       </svg>
-      <span className="font-medium">{loading ? "—" : likes.toLocaleString()}</span>
+      <span>{loading ? "—" : likes.toLocaleString()}</span>
     </button>
   );
 }
