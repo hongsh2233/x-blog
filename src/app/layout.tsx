@@ -23,19 +23,7 @@ export default function RootLayout({
             >
               Tech Blog
             </Link>
-            <nav className="flex items-center gap-6">
-              <Link
-                href="/ai-news"
-                className="text-sm font-medium text-gray-600 hover:text-accent-600 transition-colors duration-200"
-              >
-                AI 소식
-              </Link>
-              <Link
-                href="/aitimes-news"
-                className="text-sm font-medium text-gray-600 hover:text-accent-600 transition-colors duration-200"
-              >
-                AI Times
-              </Link>
+            <nav className="flex items-center gap-8">
               <Link
                 href="/about"
                 className="text-sm font-medium text-gray-600 hover:text-accent-600 transition-colors duration-200"
