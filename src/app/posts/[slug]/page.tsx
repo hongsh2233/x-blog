@@ -45,16 +45,16 @@ export default async function PostPage({
   return (
     <article>
       {/* Header */}
-      <header className="mb-10">
-        <h1 className="text-3xl font-bold text-gray-900 leading-tight mb-4">
+      <header className="mb-12">
+        <h1 className="text-5xl font-bold text-gray-900 leading-tight mb-6 tracking-tight">
           {post.title}
         </h1>
 
         {/* Metadata row */}
-        <div className="flex items-center gap-4 text-sm text-gray-500 mb-5">
-          <span className="flex items-center gap-1.5">
+        <div className="flex items-center gap-6 text-sm font-medium text-gray-600 mb-8 pb-8 border-b border-gray-100">
+          <span className="flex items-center gap-2">
             <svg
-              className="w-4 h-4"
+              className="w-5 h-5 text-accent-600"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -82,30 +82,18 @@ export default async function PostPage({
         </div>
       </header>
 
-      {/* Divider */}
-      <hr className="border-gray-200 mb-10" />
-
       {/* Content */}
       <div
-        className="prose prose-gray max-w-none
-          prose-headings:font-bold prose-headings:text-gray-900
-          prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-          prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-          prose-p:text-gray-700 prose-p:leading-7
-          prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline
-          prose-strong:text-gray-900
-          prose-code:text-blue-700 prose-code:bg-blue-50 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm prose-code:font-normal prose-code:before:content-none prose-code:after:content-none
-          prose-pre:bg-transparent prose-pre:p-0
-          prose-pre:rounded-none prose-pre:shadow-none
-          prose-table:text-sm
-          prose-th:bg-gray-100 prose-th:font-semibold
-          prose-li:text-gray-700"
+        className="prose-enhanced"
         dangerouslySetInnerHTML={{ __html: post.content }}
       />
 
       {/* Like section */}
-      <div className="mt-16 pt-10 border-t border-gray-200 flex flex-col items-center gap-3">
-        <p className="text-sm text-gray-500">이 글이 도움이 되었나요?</p>
+      <div className="mt-20 pt-12 border-t border-gray-100 flex flex-col items-center gap-6">
+        <div className="text-center">
+          <p className="text-lg font-medium text-gray-900 mb-2">이 글이 도움이 되었나요?</p>
+          <p className="text-sm text-gray-500">좋아요를 눌러주면 더 나은 콘텐츠 작성에 도움이 됩니다.</p>
+        </div>
         <LikeButton slug={slug} />
       </div>
     </article>
